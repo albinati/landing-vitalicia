@@ -2,7 +2,8 @@
 
 ## About
 
-This is the landing page.
+npm install 
+npm start para rodar local.
 
 ## Copyright and License
 
