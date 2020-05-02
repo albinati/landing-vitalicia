@@ -1,4 +1,4 @@
-// Styling for the download section
+// Styling for the howto section
 section.howto {    
     position: relative;
     padding: 10% 10%;
@@ -6,6 +6,9 @@ section.howto {
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
+    @media (max-width: 650px) {
+        margin-top: 225px;
+    }
 
     h2 {
         font-size: 50px;        

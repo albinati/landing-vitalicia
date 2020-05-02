@@ -113,7 +113,7 @@ section h2 {
 
 @media (min-width: 200px) {
   #mainNav {
-    border-color: transparent;
+    border-color: rgba(209, 209, 209, 0.05);
     background-color: transparent;
   }
   #mainNav .navbar-brand {
@@ -239,6 +239,12 @@ section.howto {
   overflow: hidden;
 }
 
+@media (max-width: 650px) {
+  section.howto {
+    margin-top: 225px;
+  }
+}
+
 section.howto h2 {
   font-size: 50px;
 }
@@ -250,180 +256,28 @@ section.simulation {
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
-  /* HR */
 }
 
-section.simulation .price-box {
-  margin: 0 auto;
-  background: #dd0d8d;
-  border-radius: 10px;
-  padding: 40px 15px;
-  width: 500px;
-}
-
-section.simulation .ui-widget-content {
-  border: 1px solid #bdc3c7;
-  background: #e1e1e1;
-  color: #222222;
-  margin-top: 4px;
-}
-
-section.simulation .ui-slider .ui-slider-handle {
-  position: absolute;
-  z-index: 2;
-  width: 5.2em;
-  height: 2.2em;
-  cursor: default;
-  margin: 0 -40px auto !important;
-  text-align: center;
-  line-height: 30px;
-  color: #ffffff;
-  font-size: 15px;
-}
-
-section.simulation .ui-slider .ui-slider-handle .glyphicon {
-  color: #ffffff;
-  margin: 0 3px;
-  font-size: 11px;
-  opacity: 0.5;
-}
-
-section.simulation .ui-corner-all {
-  border-radius: 20px;
-}
-
-section.simulation .ui-slider-horizontal .ui-slider-handle {
-  top: -0.9em;
-}
-
-section.simulation .ui-state-default,
-section.simulation .ui-widget-content .ui-state-default {
-  border: 1px solid #f9f9f9;
-  background: #3498db;
-}
-
-section.simulation .ui-slider-horizontal .ui-slider-handle {
-  margin-left: -0.5em;
-}
-
-section.simulation .ui-slider .ui-slider-handle {
-  cursor: pointer;
-}
-
-section.simulation .ui-slider a,
-section.simulation .ui-slider a:focus {
-  cursor: pointer;
-  outline: none;
-}
-
-section.simulation .price,
-section.simulation .lead p {
-  font-weight: 600;
-  font-size: 32px;
-  display: inline-block;
-  line-height: 60px;
-}
-
-section.simulation .total {
-  border-bottom: 1px solid transparent;
-  /*display: inline;
-        padding: 10px 5px;*/
-  position: relative;
-  padding-bottom: 20px;
-}
-
-section.simulation .total:before {
-  content: "";
-  display: inline;
-  position: absolute;
-  left: 0;
-  bottom: 5px;
-  width: 100%;
-  height: 3px;
-  background: transparent;
-  opacity: 0.5;
-}
-
-section.simulation .price-slider {
-  margin-bottom: 70px;
-}
-
-section.simulation .price-slider span {
-  font-weight: 200;
-  display: inline-block;
-  color: #7f8c8d;
-  font-size: 13px;
-}
-
-section.simulation .form-pricing {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 4px;
-}
-
-section.simulation .price-form {
-  background: #ffffff;
-  margin-bottom: 10px;
-  padding: 20px;
-  border: 1px solid #eeeeee;
-  border-radius: 4px;
-  /*-moz-box-shadow:    0 5px 5px 0 #ccc;
-          -webkit-box-shadow: 0 5px 5px 0 #ccc;
-          box-shadow:         0 5px 5px 0 #ccc;*/
-}
-
-section.simulation .form-group {
-  margin-bottom: 0;
-}
-
-section.simulation .form-group span.price {
-  font-weight: 200;
-  display: inline-block;
-  color: #7f8c8d;
-  font-size: 14px;
-}
-
-section.simulation .help-text {
-  display: block;
-  margin-top: 32px;
-  margin-bottom: 10px;
-  color: #737373;
-  position: absolute;
-  /*margin-left: 20px;*/
-  font-weight: 200;
-  text-align: right;
-  width: 188px;
-}
-
-section.simulation .price-form label {
-  font-weight: 200;
-  font-size: 21px;
-}
-
-section.simulation img.payment {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-section.simulation .ui-slider-range-min {
-  background: #2980b9;
-}
-
-section.simulation hr.style {
-  margin-top: 0;
-  border: 0;
-  border-bottom: 1px dashed #ccc;
-  background: #999;
+@media (max-width: 650px) {
+  section.simulation {
+    margin-top: 225px;
+  }
 }
 
 section.contact {
-  padding-top: 60px;
+  position: relative;
+  padding: 10% 5%;
+  height: 100%;
+  min-height: 25rem;
   width: 100%;
-  width: 100vw;
-  height: 550px;
-  background: grey;
+  overflow: hidden;
+  padding-top: 60px;
+  background: #b9b9b9;
   color: #fff;
+}
+
+section.contact .conteiner {
+  margin-top: 54px;
 }
 
 section.contact .section-content {
@@ -447,27 +301,26 @@ section.contact .form-group {
   margin-top: 10px;
 }
 
-section.contact label {
-  font-size: 1.3em;
-  line-height: 1em;
-  font-weight: normal;
-}
-
-section.contact .form-control {
-  font-size: 1.3em;
-  color: #080808;
-}
-
 section.contact textarea.form-control {
   height: 135px;
   /* margin-top: px;*/
 }
 
 section.contact .submit {
-  font-size: 1.1em;
-  width: 150px;
+  font-size: auto;
+  width: auto;
   background-color: transparent;
   color: #fff;
+}
+
+@media (max-width: 650px) {
+  section.contact {
+    margin-top: 225px;
+  }
+  section.contact .form-control {
+    font-size: 10px;
+    color: #080808;
+  }
 }
 
 footer {

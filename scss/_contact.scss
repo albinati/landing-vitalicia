@@ -1,12 +1,19 @@
 // Styling for the download section
-section.contact {
-    
-    padding-top: 60px;
+section.contact {    
+    position: relative;
+    padding: 10% 5%;
+    height: 100%;
+    min-height: 25rem;
     width: 100%;
-    width: 100vw;
-    height: 550px;    
-    background: grey;
+    overflow: hidden;
+    padding-top: 60px;    
+    background: rgb(185, 185, 185);
     color: #fff;    
+  
+
+    .conteiner{
+        margin-top:54px;
+    }
 
     .section-content {
         text-align: center;
@@ -26,25 +33,27 @@ section.contact {
     .form-group {
         margin-top: 10px;
     }
-    label {
-        font-size: 1.3em;
-        line-height: 1em;
-        font-weight: normal;
-    }
-    .form-control {
-        font-size: 1.3em;
-        color: #080808;
-    }
+    
     textarea.form-control {
-        height: 135px;
+        height: 135px;        
         /* margin-top: px;*/
     }
 
     .submit {
-        font-size: 1.1em;        
-        width: 150px;
+        font-size: auto;        
+        width: auto;
         background-color: transparent;
         color: #fff;
+    }
+
+    @media (max-width: 650px) {
+        margin-top: 225px;
+      
+        .form-control {
+            font-size: 10px;
+            color: #080808;
+        }
+                
     }
       
 }

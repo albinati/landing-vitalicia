@@ -40,7 +40,7 @@
         }
     }
     @media (min-width: 200px) {
-        border-color: transparent;
+        border-color: fade-out($gray-darker, .95);
         background-color: transparent;
         .navbar-brand {
             color: fade(white, 70%);
