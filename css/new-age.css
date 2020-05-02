@@ -111,7 +111,7 @@ section h2 {
   color: #fff;
 }
 
-@media (min-width: 100px) {
+@media (min-width: 200px) {
   #mainNav {
     border-color: transparent;
     background-color: transparent;
@@ -152,8 +152,7 @@ section h2 {
 
 header {
   position: relative;
-  background-color: black;
-  height: 75vh;
+  height: 100%;
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
@@ -162,11 +161,10 @@ header {
 header.masthead {
   position: relative;
   width: 100%;
-  padding-top: 150px;
-  padding-bottom: 100px;
+  padding-top: 25%;
   color: white;
-  background: url("../img/bg-pattern.png"), #7b4397;
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dd0d8d);
+  background: #7b4397;
+  background: linear-gradient(to left, #7b4397, #dd0d8d);
 }
 
 header.masthead .header-content {
@@ -176,11 +174,16 @@ header.masthead .header-content {
 }
 
 header.masthead .header-content h1 {
+  font-size: 40px;
+}
+
+header.masthead .header-content h2 {
   font-size: 30px;
 }
 
 header.masthead .device-container {
-  max-width: 325px;
+  max-width: 500px;
+  margin-top: 5%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -203,50 +206,50 @@ header.masthead .device-container .screen img {
   header.masthead .header-content h1 {
     font-size: 50px;
   }
+  header.masthead .header-content h2 {
+    font-size: 40px;
+  }
   header.masthead .device-container {
-    max-width: 325px;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 650px) {
+  header.masthead .header-content {
+    margin-bottom: 0;
+    text-align: left;
+  }
+  header.masthead .header-content h1 {
+    font-size: 25px;
+  }
+  header.masthead .header-content h2 {
+    font-size: 18px;
+  }
+  header.masthead .device-container {
+    display: none;
   }
 }
 
 section.howto {
   position: relative;
-  padding: 150px 0;
+  padding: 10% 10%;
+  height: 100%;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
 }
 
 section.howto h2 {
   font-size: 50px;
-  margin-top: 0;
-}
-
-section.howto .badges .badge-link {
-  display: block;
-  margin-bottom: 25px;
-}
-
-section.howto .badges .badge-link:last-child {
-  margin-bottom: 0;
-}
-
-section.howto .badges .badge-link img {
-  height: 60px;
-}
-
-@media (min-width: 768px) {
-  section.howto .badges .badge-link {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-}
-
-@media (min-width: 768px) {
-  section.howto h2 {
-    font-size: 70px;
-  }
 }
 
 section.simulation {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  position: relative;
+  padding: 10% 10%;
+  height: 100%;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
   /* HR */
 }
 
