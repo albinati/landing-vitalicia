@@ -1,6 +1,6 @@
 // Styling for the navbar
 #mainNav {
-    border-color: fade-out($gray-darker, .95);
+    border-color: fade-out($gray-darker, 0.95);
     background-color: transparent;
     @include transition-all;
     @include heading-font;
@@ -39,8 +39,13 @@
             }
         }
     }
+    @media (max-width: 650px) {
+        .navbar-nav {
+            background-color: rgb(190, 19, 125);
+        }
+    }
     @media (min-width: 100px) {
-        border-color: fade-out($gray-darker, .95);
+        border-color: fade-out($gray-darker, 0.95);
         background-color: transparent;
         .navbar-brand {
             color: fade(white, 70%);
@@ -51,13 +56,13 @@
         }
         .navbar-nav > li > a,
         .navbar-nav > li > a:focus {
-            color: fade-out(white, .3);
+            color: fade-out(white, 0.3);
             &:hover {
                 color: white;
             }
         }
         &.navbar-shrink {
-            border-color: fade-out($gray-darker, .9);
+            border-color: fade-out($gray-darker, 0.9);
             background-color: rgb(221, 13, 141);
             .navbar-brand {
                 color: $gray-darker;
@@ -75,5 +80,4 @@
             }
         }
     }
-    
 }

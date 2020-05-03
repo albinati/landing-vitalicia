@@ -7,69 +7,73 @@ header {
     overflow: hidden;
   }
    
-header.masthead {
+header.masthead {    
     position: relative;
-    width: 100%;    
+    
     color: white;
     background: $theme-secondary;
     background: -webkit-linear-gradient(to left, $theme-secondary, $theme-tertiary);
     background: linear-gradient(to left, $theme-secondary, $theme-tertiary);
 
-    //background: url('../img/bg-pattern.png'), $theme-secondary;
-    //background: url('../img/bg-pattern.png'), -webkit-linear-gradient(to left, $theme-secondary, $theme-tertiary);
-    //background: url('../img/bg-pattern.png'), linear-gradient(to left, $theme-secondary, $theme-tertiary);
+    background: url('../img/bg-pattern3.png'), $theme-secondary;
+    background: url('../img/bg-pattern3.png'), -webkit-linear-gradient(to left, $theme-secondary, $theme-tertiary);
+    background: url('../img/bg-pattern3.png'), linear-gradient(to left, $theme-secondary, $theme-tertiary);
 
     .header-content {
-        max-width: 500px;
-        margin-bottom: 100px;
-        text-align: center;
-       
-    }
-    .device-container {
-        max-width: 500px;
-        margin-top: 20%;
-        margin-right: auto;
-        margin-left: auto;
-        .screen img {
-            border-radius: 3px;
-        }
-    }
-    @media (min-width: 750px) {
-        height: 100vh;
-        min-height: 775px;
+        margin-top: 5rem;
+        text-align: left;       
+    }    
+    @media (max-width: 330px) {      
         .header-content {
-            margin-bottom: 0;
+            margin-bottom: 0;               
             text-align: left;
             h1 {
-                font-size: 40px;
+                font-size: 28px;
             }
             h2 {
-                font-size: 30px;
+                font-size: 18px;
             }
         }
-        .device-container {
-            max-width: 500px;
-            margin-top: 20%;
-            
+        .video-content {
+            margin-top: 0px;           
+            text-align: center;
         }
-    }   
-
-    @media (max-width: 750px) {
-        height: 100vh;
-        min-height: 775px;
+        
+    }      
+    
+    @media (min-width: 350px) {      
         .header-content {
-            margin-bottom: 0;    
-            margin-top: 25%;        
+            margin-bottom: 0;               
             text-align: left;
             h1 {
-                font-size: 25px;                
+                font-size: 35px;
             }
             h2 {
-                font-size: 20px;
+                font-size: 18px;
             }
         }
-        .device-container {            
-            display:none
+        .video-content {
+            margin-top: 0px;
+            text-align: center;    
+        }
+        
+    } 
+    
+    @media (min-width: 700px) {
+      .header-content {
+            margin-top: 5%;  
+            margin-bottom: 0;          
+            text-align: left;
+            h1 {
+                font-size: 55px;                
+            }
+            h2 {
+                font-size: 32px;
+            }
+        }       
+        .video-content {
+            margin-top: 5%;         
+            text-align: left;
         }
     }   
 
