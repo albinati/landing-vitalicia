@@ -4,64 +4,6 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script type="text/javascript"
-  src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $("#slider").slider({
-      animate: true,
-      value: 1,
-      min: 0,
-      max: 1000,
-      step: 10,
-      slide: function (event, ui) {
-        update(1, ui.value); //changed
-      }
-    });
-
-    $("#slider2").slider({
-      animate: true,
-      value: 0,
-      min: 0,
-      max: 500,
-      step: 1,
-      slide: function (event, ui) {
-        update(2, ui.value); //changed
-      }
-    });
-
-    //Added, set initial value.
-    $("#amount").val(0);
-    $("#duration").val(0);
-    $("#amount-label").text(0);
-    $("#duration-label").text(0);
-
-    update();
-  });
-
-  //changed. now with parameter
-  function update(slider, val) {
-    //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
-    var $amount = slider == 1 ? val : $("#amount").val();
-    var $duration = slider == 2 ? val : $("#duration").val();
-
-    /* commented
-    $amount = $( "#slider" ).slider( "value" );
-    $duration = $( "#slider2" ).slider( "value" );
-     */
-
-    $total = "$" + ($amount * $duration);
-    $("#amount").val($amount);
-    $("#amount-label").text($amount);
-    $("#duration").val($duration);
-    $("#duration-label").text($duration);
-    $("#total").val($total);
-    $("#total-label").text($total);
-
-    $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $amount + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
-    $('#slider2 a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + $duration + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
-  }
-</script>
 
 <head>
 
@@ -69,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <title>Vitalicia</title>
 
   <!-- Bootstrap core CSS -->
@@ -126,8 +68,9 @@
         <div class="col-lg-7 my-auto">
           <div class="header-content mx-auto">
             <h1 class="mb-5">Da consulta ao pagamento.</h1>
-            <h2 class="mb-5">Você não precisa mais esperar o SUS ou a carência do plano pra ter o
-              tratamento de qualidade!</h2>
+            <h2 class="mb-5">Você não precisa mais esperar o SUS ou a carência do plano.
+              Tenha um tratamento de qualidade!</h2>
+            <br><br><br>
             <a href="#simulation" class="btn btn-outline btn-xl js-scroll-trigger">Simule agora!</a>
           </div>
         </div>
@@ -148,14 +91,39 @@
     </div>
   </header>
 
-
   <section class="howto bg-primary text-center" id="howto">
     <div class="container ">
       <div class="row">
-        <div class="col-md-8 mx-auto">
-          <h3 class="section-heading">Simule. Cadastre. Agende sua consulta.</h3>
-          <p>Quanto mais você guarda, mais crédito tem para suas despesas médicas.</p>
-
+        <div class="col-md-12">
+          <div class="main-timeline">
+            <a href="#howto" class="timeline">
+              <div class="timeline-icon"><i class="fa fa-heartbeat"></i></div>
+              <div class="timeline-content">
+                <h3 class="title">Faça sua escolha</h3>
+                <p class="description">
+                  Consultas, exames e cirurgias
+                </p>
+              </div>
+            </a>
+            <a href="#howto" class="timeline">
+              <div class="timeline-icon"><i class="fas fa-file-medical"></i></div>
+              <div class="timeline-content">
+                <h3 class="title">Receba um orçamento rápido</h3>
+                <p class="description">
+                  Simule a parcela ideal.
+                </p>
+              </div>
+            </a>
+            <a href="#howto" class="timeline">
+              <div class="timeline-icon"><i class="fas fa-piggy-bank	"></i></div>
+              <div class="timeline-content">
+                <h3 class="title">Pague pelo que usar</h3>
+                <p class="description">
+                  Você só paga pelo que for que usar.
+                </p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -174,34 +142,34 @@
     </div>
     <div class="contact-section">
       <div class="container">
-        <form></form>
-        <div class=row>
-          <div class="col-md-6 form-line">
-            <div class="form-group">
-              <label for="exampleInputUsername">Seu nome</label>
-              <input type="text" class="form-control" id="" placeholder=" ">
+        <form>
+          <div class=row>
+            <div class="col-md-6 form-line">
+              <div class="form-group">
+                <label for="exampleInputUsername">Seu nome</label>
+                <input type="text" class="form-control" id="" placeholder=" ">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail">Seu e-mail</label>
+                <input type="email" class="form-control" id="exampleInputEmail" placeholder=" ">
+              </div>
+              <div class="form-group">
+                <label for="telephone">Seu telefone</label>
+                <input type="tel" class="form-control" id="telephone" placeholder="">
+              </div>
             </div>
-            <div class="form-group">
-              <label for="exampleInputEmail">Seu e-mail</label>
-              <input type="email" class="form-control" id="exampleInputEmail" placeholder=" ">
-            </div>
-            <div class="form-group">
-              <label for="telephone">Seu telefone</label>
-              <input type="tel" class="form-control" id="telephone" placeholder="">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="description">Mensagem</label>
+                <textarea class="form-control" id="description" placeholder=""></textarea>
+              </div>
+              <div>
+                <button type="button" class="btn btn-default submit">
+                  <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                  Enviar</button>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="description">Mensagem</label>
-              <textarea class="form-control" id="description" placeholder=""></textarea>
-            </div>
-            <div>
-              <button type="button" class="btn btn-default submit">
-                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                Enviar</button>
-            </div>
-          </div>
-        </div>
         </form>
       </div>
   </section>
