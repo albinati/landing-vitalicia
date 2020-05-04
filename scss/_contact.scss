@@ -1,28 +1,37 @@
 // Styling for the download section
-section.contact {    
+section.contact {
     position: relative;
     padding: 10% 5%;
-    height: 100%;
+    height: auto;
     width: 100%;
     min-height: 25rem;
     overflow: hidden;
-    padding-top: 60px;    
-    background: rgb(185, 185, 185);
-    color: #fff;    
-  
+    padding-top: 60px;
+    
+    background: $theme-secondary;
+    background: -webkit-linear-gradient(to left, $theme-secondary, $theme-tertiary);
+    background: linear-gradient(to left, $theme-secondary, $theme-tertiary);
+
+    background: url('../img/bg-pattern3.png'), $theme-secondary;
+    background: url('../img/bg-pattern3.png'), -webkit-linear-gradient(to left, $theme-secondary, $theme-tertiary);
+    background: url('../img/bg-pattern3.png'), linear-gradient(to left, $theme-secondary, $theme-tertiary);
+
+    color: #fff;
+
     .conteiner {
-        margin-top:54px;
+        margin-top: 54px;
     }
 
     .section-content {
         text-align: center;
     }
     .contact-section {
-        text-align: left;        
+        padding-top: 5%;
+        text-align: left;
     }
-   // .contact-section .col-md-6 {
-   //     width: 50%;
-   // }
+    // .contact-section .col-md-6 {
+    //     width: 50%;
+    // }
 
     .form-line {
         border-right: 1px solid #b29999;
@@ -31,47 +40,52 @@ section.contact {
     .form-group {
         margin-top: 10px;
     }
-    
+
     textarea.form-control {
-        height: 135px;        
+        height: 165px;
         /* margin-top: px;*/
     }
 
     .submit {
-        font-size: auto;        
+        font-size: auto;
         width: auto;
         background-color: transparent;
         color: #fff;
     }
 
-    @media (max-width: 650px) {
-        .section-content h1{
-            font-size: 2rem;
-
+    @media (max-width: 700px) {
+        .section-content h1 {
+            font-size: 1.4rem;
         }
-        margin-top: 225px;       
         .form-control {
-            font-size: 10px;
+            font-size: rem;
             color: #080808;
         }
-                
+        textarea.form-control {
+            height: 80px;
+        }
+        .form-line {
+            border-right: 0px;
+        }
     }
 
-    @media (min-width: 100px) {
-        .section-header.h1{
+    @media (min-width: 700px) {
+        .section-header.h1 {
+            font-size: 72px;
+        }
+        .form-control {
             font-size: 1rem;
+            color: #080808;
         }
-        .h1 {
-            font-size: 10px;
+        .form-line {
+            border-right: 1px solid #b29999;
         }
-       .form-line {
-            border-right: 0px;
-       }
-       .col-md-6 {
-           width: 100%;
-          
-       }
-
-    }   
-      
+        .col-md-6 {
+            width: 100%;
+        }
+        textarea.form-control {
+            height: 160px;
+            /* margin-top: px;*/
+        }
+    }
 }

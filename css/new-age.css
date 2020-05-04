@@ -113,7 +113,7 @@ section h2 {
 
 @media (max-width: 650px) {
   #mainNav .navbar-nav {
-    background-color: #be137d;
+    background-color: #dd0d8d;
   }
 }
 
@@ -184,10 +184,10 @@ header.masthead .header-content {
     text-align: left;
   }
   header.masthead .header-content h1 {
-    font-size: 28px;
+    font-size: 2.5rem;
   }
   header.masthead .header-content h2 {
-    font-size: 18px;
+    font-size: 1.2rem;
   }
   header.masthead .video-content {
     margin-top: 0px;
@@ -201,10 +201,10 @@ header.masthead .header-content {
     text-align: left;
   }
   header.masthead .header-content h1 {
-    font-size: 35px;
+    font-size: 2.5rem;
   }
   header.masthead .header-content h2 {
-    font-size: 18px;
+    font-size: 1.4rem;
   }
   header.masthead .video-content {
     margin-top: 0px;
@@ -219,10 +219,10 @@ header.masthead .header-content {
     text-align: left;
   }
   header.masthead .header-content h1 {
-    font-size: 55px;
+    font-size: 4.5rem;
   }
   header.masthead .header-content h2 {
-    font-size: 32px;
+    font-size: 2rem;
   }
   header.masthead .video-content {
     margin-top: 5%;
@@ -412,7 +412,7 @@ section.howto .timeline-body > p + p {
     padding-top: 10%;
   }
   section.howto h1 {
-    font-size: 30px;
+    font-size: 2rem;
   }
 }
 
@@ -421,7 +421,7 @@ section.howto .timeline-body > p + p {
     padding-top: 10%;
   }
   section.howto h1 {
-    font-size: 35px;
+    font-size: 2rem;
   }
 }
 
@@ -430,7 +430,7 @@ section.howto .timeline-body > p + p {
     padding-top: 5%;
   }
   section.howto h1 {
-    font-size: 50px;
+    font-size: 3.5rem;
   }
 }
 
@@ -452,12 +452,15 @@ section.simulation {
 section.contact {
   position: relative;
   padding: 10% 5%;
-  height: 100%;
+  height: auto;
   width: 100%;
   min-height: 25rem;
   overflow: hidden;
   padding-top: 60px;
-  background: #b9b9b9;
+  background: #7b4397;
+  background: linear-gradient(to left, #7b4397, #dd0d8d);
+  background: url("../img/bg-pattern3.png"), #7b4397;
+  background: url("../img/bg-pattern3.png"), linear-gradient(to left, #7b4397, #dd0d8d);
   color: #fff;
 }
 
@@ -470,6 +473,7 @@ section.contact .section-content {
 }
 
 section.contact .contact-section {
+  padding-top: 5%;
   text-align: left;
 }
 
@@ -482,7 +486,7 @@ section.contact .form-group {
 }
 
 section.contact textarea.form-control {
-  height: 135px;
+  height: 165px;
   /* margin-top: px;*/
 }
 
@@ -493,31 +497,39 @@ section.contact .submit {
   color: #fff;
 }
 
-@media (max-width: 650px) {
-  section.contact {
-    margin-top: 225px;
-  }
+@media (max-width: 700px) {
   section.contact .section-content h1 {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   section.contact .form-control {
-    font-size: 10px;
+    font-size: rem;
     color: #080808;
   }
-}
-
-@media (min-width: 100px) {
-  section.contact .section-header.h1 {
-    font-size: 1rem;
-  }
-  section.contact .h1 {
-    font-size: 10px;
+  section.contact textarea.form-control {
+    height: 80px;
   }
   section.contact .form-line {
     border-right: 0px;
   }
+}
+
+@media (min-width: 700px) {
+  section.contact .section-header.h1 {
+    font-size: 72px;
+  }
+  section.contact .form-control {
+    font-size: 1rem;
+    color: #080808;
+  }
+  section.contact .form-line {
+    border-right: 1px solid #b29999;
+  }
   section.contact .col-md-6 {
     width: 100%;
+  }
+  section.contact textarea.form-control {
+    height: 160px;
+    /* margin-top: px;*/
   }
 }
 
