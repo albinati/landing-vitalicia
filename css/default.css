@@ -75,3 +75,8 @@
 .texto_grande {
     font-size: x-large;
 }
+
+.botao_rosa {
+    background-color: #dd0d8d;
+    color: #EEE;
+}
