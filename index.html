@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css" rel="stylesheet">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -30,6 +31,8 @@
 
   <!-- Custom styles for this template -->
   <link href="css/new-age.min.css" rel="stylesheet">
+  <link href="css/bootstrap-combobox.css" rel="stylesheet">
+  <link href="css/default.css" rel="stylesheet">
 
 </head>
 
@@ -75,15 +78,15 @@
         </div>
         <div class="col-lg-6 my-auto">
           <div class="header-content video-content">
-          <div align="center" class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5MTFBoWsjZ0?rel=0" frameborder="0"
-              allowfullscreen></iframe>
+            <div align="center" class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5MTFBoWsjZ0?rel=0"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+            <br>
+            <a href="#howto" class="btn btn-outline btn-xl js-scroll-trigger">Conheça agora!</a>
           </div>
-          <br>
-          <a href="#howto" class="btn btn-outline btn-xl js-scroll-trigger">Conheça agora!</a>
         </div>
       </div>
-    </div>
     </div>
   </header>
 
@@ -113,7 +116,8 @@
             </div>
             <div class="timeline-body">
 
-              <p>Você escolhe os médicos e onde fazer exames ou procedimentos, tudo com os melhores preços e condições de pagamento.</p>
+              <p>Você escolhe os médicos e onde fazer exames ou procedimentos, tudo com os melhores preços e condições
+                de pagamento.</p>
             </div>
           </div>
         </li>
@@ -133,17 +137,54 @@
     </div>
   </section>
 
-  <!-- <section class="simulation text-center" id="simulation">
-    <div class="container">
+  <section class="simulation text-center" id="simulation">
 
-    </div>
+    <form>
+      <div class="page-header">
+        <h1>Vamos fazer uma simulação?</h1>
+      </div>
+      <div class="flex-xl-row-reverse">
+        <label>O que você precisa?</label>
+        <select id="combobox" class="combobox dropdown-full">
+          <option></option>
+          <option value="acompanhamento">Acompanhamento médico</option>
+          <option value="fisioterapia">Fisioterapia</option>
+          <option value="pediatra">Pediatria</option>
+          <option value="cirurgia_estetica">Procedimentos cirurgicos estéticos</option>
+          <option value="cirurgia">Procedimentos cirurgicos não estéticos</option>
+          <option value="dentista_estetica">Procedimentos dentários estéticos</option>
+          <option value="dentista">Procedimentos dentários não estáticos</option>
+          <option value="psico">Psicologia/Psiquiatria</option>
+        </select>
+        <input type="hidden" id="valor" value="0" />
+      </div>
+      <div class="page-header">
+        <span id="valor_procedimento"></span>
+        <span id="legenda_valor"></span>
+      </div>
+      <div class="flex-xl-row-reverse" id="step2">
+        <label>Qual a melhor forma de parcelamento para o seu bolso?</label>
+        <div class="slidecontainer">
+          <input type="range" min="3" max="24" value="12" class="slider" id="parcela">
+        </div>
+        <span id="legenda_parcela" class="texto_negrito texto_rosa">12x</span> de
+        <span id="legenda_valor_final" class="texto_negrito texto_rosa texto_grande"></span>
+      </div>
+      </div>
+      <div>
+        <button type="button" class="btn btn-xl texto_rosa texto_negrito texto_grande">
+          Gostei! Quero mais informações</button>
+      </div>
+      </div>
+
+    </form>
+
   </section>
--->
   <section class="contact text-center" id="contact">
 
     <div class="section-content">
       <h1 class="section-header">Não achou o que queria? Manda pra gente!</h1>
-    </div>    
+    </div>
     <div class="contact-section">
       <div class="container">
         <form>
@@ -201,11 +242,15 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for this template -->
   <script src="js/new-age.min.js"></script>
+  <script src="js/bootstrap-combobox.js"></script>
+  <script src="js/simulator.js"></script>
 
 </body>
 
