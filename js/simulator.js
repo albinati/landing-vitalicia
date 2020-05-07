@@ -24,18 +24,28 @@ function quote() {
         "phone": $("#phone_quote").val()
     }
     console.log(quote_data);
-    var headers = { "content-type": "application/json; charset=UTF-8" }
 
-    var xhr = new XMLHttpRequest();
-    var myHeaders = new Headers();
-    myHeaders.append("content-type", "application/json; charset=UTF-8")
-    fetch("https://b2y82q8aa5.execute-api.us-east-2.amazonaws.com", {
-        headers: myHeaders,
-        data: quote_data
-    }).then(function(response) {
-        console.log(response.json());
-    }).then(function(json) {
-        console.log(json);
+    $.ajax({
+        url: 'https://2rjiepxpkd.execute-api.us-east-2.amazonaws.com/GetQuote',
+        type: 'post',
+        crossDomain: true,
+        dataType: 'json',
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(quote_data),
+        success: function(data) {
+            alert("OK!")
+        },
+        error: function(data) {
+            alert("Deu ruim!")
+            console.log(data)
+        },
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-Requested-With', '*');
+            xhr.setRequestHeader('Access-Control-Allow-Method', 'POST');
+            xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+        }
     });
 }
 
