@@ -16,38 +16,44 @@ function quote() {
     if (!validateEmail()) {
         return false;
     }
+    var service_url = "https://jqe8iwi2gc.execute-api.us-east-2.amazonaws.com/PROD"
 
-    quote_data = {
+    var quote_data = {
         "email": $('#email_quote').val(),
         "times": $('#parcela').val(),
         "need": $('#need').val(),
-        "phone": $("#phone_quote").val()
     }
+
+    if ($("#phone_quote").val()) {
+        quote_data['phone'] = $("#phone_quote").val();
+    }
+
     console.log(quote_data);
 
-    $.ajax({
-        url: 'https://2rjiepxpkd.execute-api.us-east-2.amazonaws.com/GetQuote',
-        type: 'post',
-        crossDomain: true,
-        dataType: 'json',
-        async: false,
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(quote_data),
-        success: function(data) {
-            alert("OK!")
-        },
-        error: function(data) {
-            alert("Deu ruim!")
-            console.log(data)
-        },
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader('X-Requested-With', '*');
-            xhr.setRequestHeader('Access-Control-Allow-Method', 'POST');
-            xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with');
-            xhr.setRequestHeader('Content-Type', 'application/json');
+    var xhr = new XMLHttpRequest();
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(quote_data),
+        headers: {
+            'Content-Type': 'application/json'
         }
-    });
+    }
+
+    fetch(service_url, options)
+        .then(function(response) {
+            $('#toast_response').html("Seu pedido foi enviado! Entraremos em contato o mais breve possível.");
+            $('#quote_done').toast('show');
+        })
+        .catch(function(response) {
+            $('#toast_response').html("Houve um problema ao processar o seu pedido, tente novamente mais tarde.");
+            $('#quote_done').toast('show');
+        });
+
+    $('#quote_modal').modal('hide');
+    $(".modal-backdrop").remove();
+
 }
+
 
 function get_value(key) {
     var values = {
@@ -77,9 +83,9 @@ $('#need').on('change', function(e) {
 
 var slider = document.getElementById("parcela");
 var output = document.getElementById("legenda_parcela");
-output.innerHTML = slider.value + "x"; // Display the default slider value
+output.innerHTML = slider.value + "x";
 
-// Update the current slider value (each time you drag the slider handle)
+
 slider.oninput = function() {
     parcelas = this.value
     output.innerHTML = parcelas + "x";
@@ -88,19 +94,26 @@ slider.oninput = function() {
 
 function set_valor() {
     parcelas = $('#parcela').val();
-    valor = $('#valor').val();
+    valor_medio = $('#valor').val();
     taxa_juros = 0.02;
-    valor_final = valor * Math.pow((1 + taxa_juros), parcelas);
-    valor_parcela = valor_final / parcelas;
+    valor = valor_medio * Math.pow((1 + taxa_juros), parcelas);
+    valor_parcela = valor / parcelas;
     cada_parcela = (valor_parcela).toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 2 });
-    $('#legenda_valor_final').text(cada_parcela);
+    $('#legenda_valor_parcela').text(cada_parcela);
+    valor_final = (valor).toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 2 });
+    $('#legenda_valor_final').text(valor_final);
+    juros_final = (valor - valor_medio).toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 2 });
+    $('#legenda_juros_final').text(juros_final);
+    $('#legenda_taxa').text("(" + (taxa_juros * 100) + "% ao mês)");
+
 }
 
 $(document).ready(function() {
     $('.combobox').combobox()
+    $('.toast').toast('hide');
 });
 
-$('#cotacaoModal').on('shown.bs.modal', function() {
+$('#quote_modal').on('shown.bs.modal', function() {
     $('#email_quote').trigger('focus')
 })
 

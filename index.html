@@ -31,11 +31,12 @@
   <link href="css/default.css" rel="stylesheet">
 
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript" ></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet"  crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css" rel="stylesheet">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165688214-1"></script>
@@ -50,7 +51,6 @@
 </head>
 
 <body id="page-top">
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -78,7 +78,6 @@
       </div>
     </div>
   </nav>
-
   <header class="masthead">
     <div class="container h-100">
       <div class="row h-100">
@@ -102,7 +101,6 @@
       </div>
     </div>
   </header>
-
   <section class="howto bg-primary text-center" id="howto">
     <div class="container ">
       <div class="page-header">
@@ -149,9 +147,21 @@
       </ul>
     </div>
   </section>
-
+<!-- Toast for Response -->
+<div class="position-absolute w-100 d-flex flex-column p-4">
+    <div class="toast ml-auto" role="alert" data-delay="700" data-autohide="false" id="quote_done">
+        <div class="toast-header">
+            <strong class="mr-auto texto_rosa">Obrigado</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="toast-body" id="toast_response"></div>
+    </div>
+</div>
+<!-- /Toast for Response -->
   <section class="simulation text-center" id="simulation">
-  <form>
+  <form id="form_quote" name="form_quote" enctype="multipart/form-data">
       <div class="container">
         <div class="page-header">
           <h1>Vamos fazer uma simulação?</h1>
@@ -170,6 +180,8 @@
                       <option value="psico">Psicologia/Psiquiatria</option>
                 </select>
                 <input type="hidden" id="valor" value="0"/>
+                <input type="hidden" id="prospect_email"/>
+                <input type="hidden" id="prospect_phone"/>                
         </div>
         <div class="page-header">
           <span id="valor_procedimento"></span>
@@ -182,12 +194,15 @@
                   <input type="range" min="3" max="24" value="12" class="slider" id="parcela">
                 </div>
                 <span id="legenda_parcela" class="texto_negrito texto_rosa">12x</span> de 
-                <span id="legenda_valor_final" class="texto_negrito texto_rosa texto_grande"></span>
+                <span id="legenda_valor_parcela" class="texto_negrito texto_rosa texto_grande"></span><br/>
+                Valor total: <span id="legenda_valor_final" class="texto_negrito"></span><br/>
+                Juros: <span id="legenda_juros_final" class="texto_negrito"></span>
+                <span id="legenda_taxa"><span>
               </div>
         </div>
         <div>
           <br/>
-          <button type="button" class="btn botao_rosa" data-toggle="modal" data-target="#cotacaoModal">
+          <button type="button" class="btn botao_rosa" data-toggle="modal" data-target="#quote_modal">
             Gostei! Quero mais informações</button>
         </div>
       </div>
@@ -233,13 +248,14 @@
         </form>
       </div>
   </section>
+
 <!-- MODAL EMAIL-->
-<div class="modal" tabindex="-1" role="dialog" id="cotacaoModal">
+<div class="modal" tabindex="-1" role="dialog" id="quote_modal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Pedir cotação</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -282,7 +298,7 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
 
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
